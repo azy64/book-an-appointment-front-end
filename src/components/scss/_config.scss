@@ -1,18 +1,18 @@
-// * {
-//   box-sizing: border-box;
-//   margin: 0;
-//   padding: 0;
-//   //   font-family: $font-stack;
-// }
+$text-color: #fafafa;
+$primary-color: #121212;
+$secondary-color: orange;
+$background-color: rgba(221, 219, 219, 0.952);
+$font-stack: 'Montserrat', serif;
+$border: 3px solid $primary-color;
 
-:root {
-  --white-backg: #fafafa;
-  --blue-color: #0290ff;
-  --blue-blur: #4386bf;
-  --back-color: #121212;
-  --size-small: 0.85rem;
-  --border-size: 1px solid #e8e8e8;
-}
+// :root {
+//   --white-backg: #fafafa;
+//   --blue-color: #0290ff;
+//   --blue-blur: #4386bf;
+  // --back-color: #121212;
+//   --size-small: 0.85rem;
+//   --border-size: 1px solid #e8e8e8;
+// }
 
 @mixin d-flex($position) {
   display: flex;
@@ -26,8 +26,12 @@
   border-radius: 4px;
 }
 
-button {
+%btn-properties {
   border: none;
   outline: none;
-  background-color: transparent;
+  font-size: 1.2rem;
+  margin: 2rem auto;
+  background-color: aqua;
+  padding: 8px 18px;
+  border-radius: 8px;
 }
