@@ -1,5 +1,11 @@
 body {
+  width: 100%;
+  height: 100v;
+  box-sizing: border-box;
+  padding: 0;
   margin: 0;
+  background-color: #fafafa;
+  background-color: blue;
   font-family:
     -apple-system,
     BlinkMacSystemFont,
@@ -16,6 +22,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.landing {
-  height: 100vh;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
