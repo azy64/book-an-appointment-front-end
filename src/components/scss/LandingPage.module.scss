@@ -11,14 +11,16 @@
   flex-direction:column; 
 
   .image {
-    width: 120px;
+    width: 200px;
     height: auto;
     display: inline-block;
-    margin: 4rem auto 1rem;
+    margin: 0.3rem auto;
 
     img {
       width: 100%;
       height: auto;
+      background-color: $secondary-color;
+      border-radius: 50%;
     }
   }
 
@@ -57,7 +59,7 @@
 
   p {
     margin-top: auto;
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
 }

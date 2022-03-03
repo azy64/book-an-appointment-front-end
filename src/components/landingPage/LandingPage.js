@@ -3,7 +3,7 @@ import BackgroundSlider from 'react-background-slider';
 import { Link } from 'react-router-dom';
 import image1 from '../../images/landing1.jpg';
 import image2 from '../../images/landing2.jpg';
-import logo from '../../images/logo.png';
+import logo from '../../images/logo_transparent.png';
 import styles from '../scss/LandingPage.module.scss';
 
 const LandingPage = () => (

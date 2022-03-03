@@ -20,7 +20,7 @@
 
 h2 {
   font-size: 1.7rem;
-  font-weight: 500;
+  font-weight: 400;
   text-align: center;
   margin: 1rem auto 0.5rem;
 }
@@ -40,7 +40,7 @@ form {
     @include d-flex(center);
     width: 100%;
     max-width: 480px;
-    margin: 8px auto;
+    margin: 10px auto;
     padding: 0 1rem;
     @extend %btn-properties;
     border: $border;
