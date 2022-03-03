@@ -1,6 +1,6 @@
 $text-color: #fafafa;
 $primary-color: #121212;
-$secondary-color: rgba(36, 171, 212, 0.897);;
+$secondary-color: rgba(36, 171, 212, 0.897);
 $background-color: rgba(221, 219, 219, 0.952);
 $font-stack: 'Montserrat', sans-serif;
 $font: 'Caveat', cursive,  serif;
@@ -22,7 +22,7 @@ $border: 3px solid $text-color;
 %main-properties {
   background-color: $background-color;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   padding: 2rem 1rem;
   font-family: $font-stack;
 }
@@ -53,5 +53,14 @@ $border: 3px solid $text-color;
 input, button {
   border: none;
   outline: none;
-  // background: black;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: inherit;
+  }
+}
+
+a {
+  text-decoration: none;
 }

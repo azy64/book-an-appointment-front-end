@@ -5,7 +5,6 @@ import Register from './components/Auth/Register';
 
 import Home from './components/dashboard/Home';
 import SideBar from './components/dashboard/SideBar';
-
 import Reservations from './components/dashboard/Reservations';
 import DoctorList from './components/dashboard/DoctorList';
 import BookAppointment from './components/dashboard/BookAppointment';
@@ -18,6 +17,8 @@ const bodyStyle = {
   padding: '0',
   margin: '0',
   background: 'aqua',
+  // display: 'flex',
+  // flexDirection: 'column',
 };
 
 const SidebarLayout = () => (
