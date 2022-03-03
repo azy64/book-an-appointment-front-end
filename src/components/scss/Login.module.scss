@@ -1,0 +1,73 @@
+@import 'config';
+
+.login-section,
+.login-register {
+  @extend %main-properties;
+  @include d-flex(space-between);
+  flex-direction:column;
+}
+
+.loginIcon svg {
+  width: 120px;
+  height: 120px;
+  border: none 1px transparent;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 50%;
+  color: $secondary-color;
+}
+
+
+h2 {
+  font-size: 1.7rem;
+  font-weight: 500;
+  text-align: center;
+  margin: 1rem auto 0.5rem;
+}
+
+form {
+  width: 90%;
+  @include d-flex(center);
+  flex-direction:column;
+  // background-color: aqua;
+
+  h4 {
+    color: $text-color;
+    margin: 0.1rem auto 1rem;
+  }
+
+  .form-group {
+    @include d-flex(center);
+    width: 100%;
+    max-width: 480px;
+    margin: 8px auto;
+    padding: 0 1rem;
+    @extend %btn-properties;
+    border: $border;
+    // background-color: blue;
+    // height: 80px;
+
+    .icon {
+      // justify-self: flex-start;
+      float: left;
+      color: $secondary-color;
+    }
+
+    input {
+      padding: 0.5rem 1rem;
+      background-color: inherit;
+      color: $secondary-color
+    }
+  }
+
+  button {
+    @extend %btn-properties;
+    @extend %btn-color;
+  }
+
+}
+
+p {
+  margin-top: auto;
+  font-size: 1rem;
+}
