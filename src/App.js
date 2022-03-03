@@ -17,7 +17,6 @@ const bodyStyle = {
   boxSizing: 'border-box',
   padding: '0',
   margin: '0',
-  // backgroundColor: '#f5f6fa',
   background: 'aqua',
 };
 

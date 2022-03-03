@@ -1,22 +1,26 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaRegUser, FaUser } from 'react-icons/fa';
+import styles from '../scss/Login.module.scss';
 
 const Register = () => (
-  <section className="register">
-    <h3>Welcome back</h3>
+  <section className={styles['login-register']}>
+    <div className={styles.loginIcon}><FaUser /></div>
+    <h2>Welcome</h2>
     <form action="">
-      <h4>Login</h4>
-      <div className="form-group">
-        <label htmlFor="Email1">Email address</label>
+      <h4>Enregister</h4>
+      <div className={styles['form-group']}>
+        {/* <label htmlFor="Email1">Email address</label> */}
         <input type="email" className="form-control" id="Email1" placeholder="Enter email" />
       </div>
-      <div className="form-group">
-        <label htmlFor="name">Full Name</label>
+      <div className={styles['form-group']}>
+        {/* <label htmlFor="name">Full Name</label> */}
+        <span className={styles.icon}><FaRegUser /></span>
         <input type="text" className="form-control" id="name" placeholder="Enter full name" />
       </div>
-      <div className="form-group">
-        <label htmlFor="password">Password</label>
+      <div className={styles['form-group']}>
+        {/* <label htmlFor="password">Password</label> */}
         <input type="password" className="form-control" id="password" placeholder="password" />
       </div>
       <button type="submit">Register</button>
