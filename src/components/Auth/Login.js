@@ -15,19 +15,16 @@ const Login = () => (
     <form action="">
       <h4>Member Login</h4>
       <div className={styles['form-group']}>
-        {/* <label htmlFor="Email1">Email address</label> */}
         <span className={styles.icon}><HiOutlineMailOpen /></span>
         <input type="email" className="form-control" id="Email1" placeholder="Useremail" />
       </div>
 
       <div className={styles['form-group']}>
-        {/* <label htmlFor="name">Full Name</label> */}
         <span className={styles.icon}><FaRegUser /></span>
         <input type="text" className="form-control" id="name" placeholder="Username" />
       </div>
 
       <div className={styles['form-group']}>
-        {/* <label htmlFor="password">Password</label> */}
         <span className={styles.icon}><RiLockPasswordLine /></span>
         <input type="password" className="form-control" id="password" placeholder="Password" />
       </div>

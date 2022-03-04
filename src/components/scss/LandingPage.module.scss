@@ -5,9 +5,9 @@
 }
 
 .landing {
+  @include d-flex(center);
   height: 100%;
   text-align: center;
-  @include d-flex(center);
   flex-direction:column; 
 
   .image {

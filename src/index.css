@@ -1,3 +1,9 @@
+:root {
+  --text-color: #fafafa;
+  --primary-color: #121212;
+  --secondary-color: rgba(36, 171, 212, 0.897);
+}
+
 body {
   width: 100%;
   height: 100%;
@@ -33,7 +39,11 @@ body {
   height: 100vh;
 }
 
+a {
+  color: var(--primary-color);
+}
+
 a.active {
-  /* background-color: $secondary-color; */
-  background-color: rgba(36, 171, 212, 0.897);
+  background-color: var(--secondary-color);
+  color: var(--text-color);
 }
