@@ -3,6 +3,7 @@
 .sidebar-dashboard {
   @extend %main-properties;
 
+  background-color: $background-color;
   position: fixed;
   top: 0;
   left: 0;
