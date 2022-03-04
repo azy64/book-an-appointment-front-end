@@ -6,9 +6,10 @@
 
 .landing {
   @include d-flex(center);
+
   height: 100%;
   text-align: center;
-  flex-direction:column; 
+  flex-direction: column;
 
   .image {
     width: 200px;
@@ -24,22 +25,20 @@
     }
   }
 
-
   h1 {
     font-size: 1.7rem;
     font-weight: 500;
   }
-  
+
   h3 {
     margin: 1rem auto;
     font-size: 1rem;
-    font-weight: 400
+    font-weight: 400;
   }
 
   a button {
     @extend %btn-properties;
     @extend %btn-color;
-
   }
 
   .sousTitle {
@@ -49,7 +48,7 @@
       font-size: 1.1rem;
       margin: 3rem 0.5rem;
     }
-  
+
     span {
       width: 100px;
       height: 2px;
@@ -61,5 +60,4 @@
     margin-top: auto;
     font-size: 1rem;
   }
-
 }

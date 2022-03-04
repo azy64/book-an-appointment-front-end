@@ -3,8 +3,10 @@
 .login-section,
 .login-register {
   @extend %main-properties;
+
   @include d-flex(space-between);
-  flex-direction:column;
+
+  flex-direction: column;
 }
 
 .loginIcon svg {
@@ -17,7 +19,6 @@
   color: $secondary-color;
 }
 
-
 h2 {
   font-size: 1.7rem;
   font-weight: 400;
@@ -27,8 +28,10 @@ h2 {
 
 form {
   width: 90%;
+
   @include d-flex(center);
-  flex-direction:column;
+
+  flex-direction: column;
   // background-color: aqua;
 
   h4 {
@@ -38,11 +41,14 @@ form {
 
   .form-group {
     @include d-flex(center);
+
     width: 100%;
     max-width: 480px;
     margin: 10px auto;
     padding: 0 1rem;
+
     @extend %btn-properties;
+
     border: $border;
     // background-color: blue;
     // height: 80px;
@@ -81,9 +87,9 @@ form {
   button {
     @extend %btn-properties;
     @extend %btn-color;
+
     transition: all 0.5s ease;
   }
-
 }
 
 p {

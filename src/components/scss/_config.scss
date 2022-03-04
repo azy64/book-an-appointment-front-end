@@ -18,7 +18,6 @@ $border: 3px solid $text-color;
   justify-content: $position;
 }
 
-
 %main-properties {
   background-color: $background-color;
   width: 100%;
@@ -50,7 +49,8 @@ $border: 3px solid $text-color;
   background-color: $secondary-color;
 }
 
-input, button {
+input,
+button {
   border: none;
   outline: none;
 
