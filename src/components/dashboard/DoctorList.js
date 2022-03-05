@@ -2,9 +2,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { doctordata } from '../../mockdata';
+import styles from '../scss/Doctor.module.scss';
 
 const DoctorList = () => (
-  <section className="doctor-list">
+  <section className={styles['doctor-list']}>
     <h2>List of Doctors</h2>
     <div className="list">
       {
