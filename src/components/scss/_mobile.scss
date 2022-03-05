@@ -6,7 +6,8 @@
     @include d-flex(center);
 
     width: 30%;
-    min-width: 195px;
+    transform: translateX(0);
+    transition: all 1s ease-in-out;
 
     .image {
       text-align: center;
@@ -57,6 +58,10 @@
       color: red;
     }
   }
+}
+
+.shrink-navbar {
+  transform: translateX(-50%);
 }
 
 // @media screen and (min-width: 768px) {

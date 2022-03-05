@@ -4,13 +4,15 @@
   @extend %main-properties;
 
   background-color: $background-color;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
-  right: 0;
+  width: 35%;
   height: 100%;
   display: flex;
   flex-direction: column;
+  transform: translateX(0);
+  transition: all 1s ease-in-out;
 
   .image {
     width: 120px;
