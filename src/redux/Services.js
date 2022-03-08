@@ -1,19 +1,19 @@
 import axios from 'axios';
 
-const baseUrl = 'https://api.coinlore.net/api';
+const baseUrl = 'https://book-doctor-appointment2.herokuapp.com';
 
-export const fetchCrypto = async () => {
+export const fetchDoctors = async () => {
   try {
-    const response = await axios.get(`${baseUrl}/tickers/`);
+    const response = await axios.get(`${baseUrl}/doctors/`);
     return response.data;
   } catch (e) {
     throw e.toString();
   }
 };
 
-export const getCryptoFromApi = async (id) => {
+export const getDetailDoctor = async (id) => {
   try {
-    const response = await axios.get(`${baseUrl}/ticker/?id=${id}`);
+    const response = await axios.get(`${baseUrl}/doctors/?id=${id}`);
     return response.data;
   } catch (e) {
     throw e.toString();
