@@ -3,9 +3,10 @@ import { fetchDoctors, getDetailDoctor } from '../Services';
 
 export const fetchAllDoctors = () => (async (dispatch) => {
   const doctors = await fetchDoctors();
+  console.log(doctors, 'payload');
   dispatch({
     type: Booking.ALL_DOCTORS,
-    payload: doctors.data,
+    payload: doctors,
   });
 });
 
