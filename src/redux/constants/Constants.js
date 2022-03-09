@@ -7,4 +7,5 @@ export const Auth = {
 export const Booking = {
   ALL_DOCTORS: 'ALL_DOCTORS',
   ONE_DOCTOR: 'ONE_DOCTOR',
+  ALL_RESERVATIONS: 'ALL_RESERVATIONS',
 };
