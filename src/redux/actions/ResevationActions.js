@@ -9,3 +9,7 @@ export const fetchAllReservations = (userid) => (async (dispatch) => {
       payload: reservation,
     });
   });
+
+  export const singleReservation = (userid, id) => (async (dispatch) => {
+    
+  });
