@@ -16,4 +16,22 @@ const Reservations = () => {
       <h2>Loading...</h2>
     );
   }
+
+  return (
+    <section className="reservations">
+      <h2>My Reservations</h2>
+      <div>
+        {
+          reservations[0].map((item) => (
+            <div key={item.id}>
+              <p>reservation</p>
+              {/* <Link to={`${item.id}`} onClick={() => dispatch(singleReservation(1, item.id))}>
+                <button type="button">view reservation</button>
+              </Link> */}
+            </div>
+          ))
+        }
+      </div>
+    </section>
+  );
 };
