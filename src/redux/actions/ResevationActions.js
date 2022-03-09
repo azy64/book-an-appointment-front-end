@@ -11,5 +11,9 @@ export const fetchAllReservations = (userid) => (async (dispatch) => {
   });
 
   export const singleReservation = (userid, id) => (async (dispatch) => {
-    
+    const data = await ONEReservation(userid, id);
+    dispatch({
+      type: Booking.ONE_DOCTOR,
+      payload: data,
+    });
   });
