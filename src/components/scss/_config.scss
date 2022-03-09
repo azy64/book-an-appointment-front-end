@@ -1,0 +1,66 @@
+$text-color: #fafafa;
+$primary-color: #121212;
+$secondary-color: rgba(36, 171, 212, 0.897);
+$background-color: rgba(221, 219, 219, 0.952);
+$font-stack: 'Montserrat', sans-serif;
+$font: 'Caveat', cursive,  serif;
+$border-size: 4px solid #121212;
+$border: 3px solid $text-color;
+
+// :root {
+//   --size-small: 0.85rem;
+//   --border-size: 1px solid #e8e8e8;
+// }
+
+@mixin d-flex($position) {
+  display: flex;
+  align-items: center;
+  justify-content: $position;
+}
+
+%main-properties {
+  // background-color: $background-color;
+  width: 100%;
+  height: 100%;
+  padding: 2rem 1rem;
+  font-family: $font-stack;
+}
+
+%boder-properties {
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+  border: var(--border-size);
+  border-radius: 4px;
+}
+
+%btn-properties {
+  border: none;
+  outline: none;
+  margin: 2rem auto;
+  font-size: 1.2rem;
+  font-weight: bold;
+  // color: $text-color;
+  // background-color: $secondary-color;
+  padding: 10px 52px;
+  border-radius: 32px;
+}
+
+%btn-color {
+  color: $text-color;
+  background-color: $secondary-color;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: inherit;
+  }
+}
+
+a {
+  text-decoration: none;
+}

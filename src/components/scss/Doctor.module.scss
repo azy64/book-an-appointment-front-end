@@ -1,0 +1,12 @@
+@import 'config';
+
+.doctor-list {
+  // height: 100vh;
+  background-color: $text-color;
+
+  h2 {
+    color: red;
+  }
+}
+
+@import 'mobile';
