@@ -9,9 +9,10 @@
   /* background-color: rgba(221, 219, 219, 0.892); */
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
-@media screen and (min-width: 540px) {
+@media screen and (min-width: 600px) {
   .body-style {
     flex-direction: row;
   }

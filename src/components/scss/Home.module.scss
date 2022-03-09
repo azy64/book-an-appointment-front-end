@@ -1,7 +1,7 @@
 @import 'config';
 
 .dashboard-home {
-  // height: 100vh;
+  height: 100%;
   background-color: $text-color;
 
   h2 {
@@ -9,4 +9,4 @@
   }
 }
 
-@import 'mobile';
+@import 'desktop';

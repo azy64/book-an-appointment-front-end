@@ -9,7 +9,6 @@ import Reservations from './components/dashboard/Reservations';
 import DoctorList from './components/dashboard/DoctorList';
 import BookAppointment from './components/dashboard/BookAppointment';
 import DoctorDetail from './components/dashboard/DoctorDetail';
-import Navbar from './components/dashboard/Navbar';
 
 import './app.css';
 
@@ -27,7 +26,6 @@ function App() {
         <Route exact path="/" element={<LandingPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/navbar" element={<Navbar />} />
         <Route element={<SidebarLayout />}>
           <Route path="/user/dashboard" element={<Home />} />
           <Route path="/user/reservation" element={<Reservations />} />

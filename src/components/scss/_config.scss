@@ -1,16 +1,13 @@
 $text-color: #fafafa;
 $primary-color: #121212;
 $secondary-color: rgba(36, 171, 212, 0.897);
+$sous-title: rgba(161, 161, 161, 0.541);
 $background-color: rgba(221, 219, 219, 0.952);
 $font-stack: 'Montserrat', sans-serif;
 $font: 'Caveat', cursive,  serif;
-$border-size: 4px solid #121212;
+$border-size: 4px solid $primary-color;
 $border: 3px solid $text-color;
 
-// :root {
-//   --size-small: 0.85rem;
-//   --border-size: 1px solid #e8e8e8;
-// }
 
 @mixin d-flex($position) {
   display: flex;
@@ -38,8 +35,6 @@ $border: 3px solid $text-color;
   margin: 2rem auto;
   font-size: 1.2rem;
   font-weight: bold;
-  // color: $text-color;
-  // background-color: $secondary-color;
   padding: 10px 52px;
   border-radius: 32px;
 }
@@ -57,10 +52,15 @@ button {
   &:hover {
     cursor: pointer;
     transform: scale(1.1);
-    background-color: inherit;
+    // background-color: inherit;
   }
 }
 
 a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
   text-decoration: none;
 }

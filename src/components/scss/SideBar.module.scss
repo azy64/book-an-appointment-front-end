@@ -1,24 +1,44 @@
 @import 'config';
 
-.sidebar-dashboard {
+
+header {
+  height: 100%;
+  position: fixed;
+
+  button {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    font-size: 1.5rem;
+    z-index: 3;
+    background-color: transparent;
+  }
+}
+
+.sidebar-dashboard,
+.shrink-navbar {
   @extend %main-properties;
 
-  background-color: $background-color;
-  position: absolute;
+  @include d-flex(flex-start);
+  // justify-content: space-between;
+
+  flex-direction: column;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 35%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+  bottom: 0;
+  width: 180px;
+  height: 100vh;
+  padding: 0;
+  background-color: $background-color;
   transform: translateX(0);
   transition: all 1s ease-in-out;
 
   .image {
-    width: 120px;
+    width: 90px;
     height: auto;
     display: inline-block;
-    margin: 0.3rem auto;
+    margin: 4rem auto;
 
     img {
       width: 100%;
@@ -28,49 +48,60 @@
     }
   }
 
-  .sidebar-inner {
-    @include d-flex(space-between);
+  .list-links {
+    // @include d-flex(flex-start);
 
-    align-items: center;
+    // background-color: blue;
     flex-wrap: nowrap;
     flex-direction: column;
-    list-style: none;
-    text-decoration: none;
+    justify-items: flex-start;
     // background-color: red;
   }
 
-  .nav-links {
+  .nav-link {
     // background-color: red;
-    margin: 10px 0;
+    // display: inline-block;
+    margin: 20px 0;
     flex: 1;
 
     a {
       width: 100%;
       height: 100%;
       padding: 6px 16px;
-      display: inline-block;
       // color: $primary-color;
+      font-size: 1rem;
     }
   }
 
-  .social-icons {
+  .footer {
+
     margin-top: auto;
     margin-bottom: 1rem;
-    font-size: 1rem;
+  
+    .social-icons {
+      font-size: 1rem;
+  
+      @include d-flex(center);
+  
+      // display: inline;
 
-    @include d-flex(center);
+      .social-link {
+        margin: 0 5px;
+        font-size: 0.8rem;
+      }
+    }
 
-    list-style: none;
-    // display: inline;
-  }
-
-  .social-link {
-    margin: 0 10px;
-
-    svg {
-      // padding: 5px 18px;
+    p {
+      font-size: 0.6rem;
+      margin-top: 5px;
     }
   }
 }
 
-@import 'mobile';
+
+.shrink-navbar {
+  // background-color: red;
+  transform: translateX(-99%);
+}
+
+@import 'desktop';
