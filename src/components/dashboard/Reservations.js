@@ -1,7 +1,8 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchAllReservations, singleReservation } from '../../redux/actions/ReservationActions';
+import { fetchAllReservations, singleReservation } from '../../redux/actions/ResevationActions';
 
 const Reservations = () => {
   const dispatch = useDispatch();
@@ -25,9 +26,9 @@ const Reservations = () => {
           reservations[0].map((item) => (
             <div key={item.id}>
               <p>reservation</p>
-              {/* <Link to={`${item.id}`} onClick={() => dispatch(singleReservation(1, item.id))}>
+              <Link to={`${item.id}`} onClick={() => dispatch(singleReservation(1, item.id))}>
                 <button type="button">view reservation</button>
-              </Link> */}
+              </Link>
             </div>
           ))
         }
@@ -35,3 +36,5 @@ const Reservations = () => {
     </section>
   );
 };
+
+export default Reservations;

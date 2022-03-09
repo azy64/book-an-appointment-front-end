@@ -12,6 +12,7 @@ import DoctorDetail from './components/dashboard/DoctorDetail';
 import Navbar from './components/dashboard/Navbar';
 
 import './app.css';
+import DetailReservation from './components/dashboard/DetailReservation';
 
 const SidebarLayout = () => (
   <>
@@ -31,6 +32,7 @@ function App() {
         <Route element={<SidebarLayout />}>
           <Route path="/user/dashboard" element={<Home />} />
           <Route path="/user/reservation" element={<Reservations />} />
+          <Route path="/user/reservation/:id" element={<DetailReservation />} />
           <Route path="/user/doctors" element={<DoctorList />} />
           <Route path="/user/doctors/:id" element={<DoctorDetail />} />
           <Route path="/user/appointments" element={<BookAppointment />} />
