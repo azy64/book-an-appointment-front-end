@@ -29,3 +29,11 @@ export const fetchReservations = async (userid) => {
   }
 };
 
+export const ONEReservation = async (userid, id) => {
+  try {
+    const response = await axios.get(`${baseUrl}/users/${userid}/reservations/${id}`);
+    return response.data;
+  } catch (e) {
+    throw e.toString();
+  }
+};
