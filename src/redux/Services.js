@@ -19,3 +19,13 @@ export const getDetailDoctor = async (id) => {
     throw e.toString();
   }
 };
+
+export const fetchReservations = async (userid) => {
+  try {
+    const response = await axios.get(`${baseUrl}/users/${userid}/reservations`);
+    return response.data;
+  } catch (e) {
+    throw e.toString();
+  }
+};
+
