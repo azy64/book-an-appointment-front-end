@@ -37,3 +37,39 @@ export const ONEReservation = async (userid, id) => {
     throw e.toString();
   }
 };
+
+export const registerUser = async (user) => {
+  const { email, name, password } = user;
+  const resp = await fetch(`${baseUrl}/users/sign_up`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      email,
+      name,
+      password,
+    }),
+  });
+  const data = await resp.text();
+  console.log(data, 'response');
+  return data;
+};
+
+export const loginUser = async (user) => {
+  const { email, name, password } = user;
+  const resp = await fetch(`${baseUrl}/users/sign_in`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      email,
+      name,
+      password,
+    }),
+  });
+  const data = await resp.text();
+  console.log(data, 'response');
+  return data;
+};

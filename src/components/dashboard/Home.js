@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { singleDoctor } from '../../redux/actions/DoctorActions';
 import styles from '../scss/Home.module.scss';
 
 const Home = () => {
   const dispatch = useDispatch();
   const doctordatas = useSelector((state) => state.doctorReducer);
   const { doctors } = doctordatas;
-  const firstfive = doctors[0].slice(0,5)
+  const firstfive = doctors[0].slice(0, 5);
   if (!firstfive) {
     return (
       <h2>Loading</h2>
@@ -15,7 +16,8 @@ const Home = () => {
   }
   return (
     <section className={styles['doctor-list']}>
-      <h2>List of Doctors</h2>
+      <h2>Hello Welcome to your Dashboard</h2>
+      <h2>List of your favourite Doctors</h2>
       <div className="list">
         {
         firstfive.map((item) => (
@@ -32,6 +34,6 @@ const Home = () => {
       </div>
     </section>
   );
-  };
+};
 
 export default Home;
