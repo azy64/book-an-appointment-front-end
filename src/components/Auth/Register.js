@@ -1,18 +1,27 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+/* eslint-disable no-unused-vars */
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { FaRegUser, FaUser } from 'react-icons/fa';
 import { HiOutlineMailOpen } from 'react-icons/hi';
 import { RiLockPasswordLine } from 'react-icons/ri';
-import { registerNewUser } from '../../redux/actions/UserActions';
+import hitAPIWithSignupDetails from '../../redux/reducer/user';
 
 import styles from '../scss/Login.module.scss';
 
 const Register = () => {
+  const navigate = useNavigate();
+
+  function goToHomePage() {
+    navigate('/user/dashboard', { replace: true });
+  }
   const dispatch = useDispatch();
+  const state = useSelector((state) => state.UserReducer);
+  const { signedUp } = state;
+  const [signUpSuccess, setSignUpSucess] = useState(signedUp);
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
   const [password, setPassowrd] = useState('');
   const registerUser = (e) => {
     e.preventDefault();
@@ -20,13 +29,23 @@ const Register = () => {
     const newUser = {
       email,
       name,
+      phoneNumber,
       password,
     };
-    dispatch(registerNewUser(newUser));
+    dispatch(hitAPIWithSignupDetails(newUser));
     setEmail('');
     setName('');
     setPassowrd('');
+    setPhoneNumber('');
   };
+
+  useEffect(() => {
+    setSignUpSucess(() => signedUp);
+    if (signedUp === 'up') {
+      setTimeout(() => goToHomePage(), 3000);
+    }
+  }, [state]);
+
   return (
     <section className={styles['login-register']}>
       <div className={styles.loginIcon}><FaUser /></div>
@@ -55,6 +74,18 @@ const Register = () => {
             placeholder="Enter full name"
             onChange={(e) => setName(e.target.value)}
             value={name}
+          />
+        </div>
+        <div className={styles['form-group']}>
+          {/* <label htmlFor="name">Full Name</label> */}
+          <span className={styles.icon}><FaRegUser /></span>
+          <input
+            type="tel"
+            className="form-control"
+            id="name"
+            placeholder="mobile Number"
+            onChange={(e) => setPhoneNumber(e.target.value)}
+            value={phoneNumber}
           />
         </div>
         <div className={styles['form-group']}>

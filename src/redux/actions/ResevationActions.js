@@ -27,3 +27,8 @@ export const singleReservation = (userid, id) => (async (dispatch) => {
     payload: data,
   });
 });
+
+export const getDoctorId = (id) => ({
+  type: Booking.ONE_DOCTOR,
+  payload: id,
+});
