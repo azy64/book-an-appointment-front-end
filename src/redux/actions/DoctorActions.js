@@ -16,3 +16,8 @@ export const singleDoctor = (id) => (async (dispatch) => {
     payload: data,
   });
 });
+
+export const docId = (id) => ({
+  type: Booking.GET_DOC_ID,
+  payload: id,
+});
