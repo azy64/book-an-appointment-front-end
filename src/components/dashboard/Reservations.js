@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 /* eslint-disable no-unused-vars */
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
@@ -24,14 +25,34 @@ const Reservations = () => {
       <h2>My Reservations</h2>
       <div>
         {
-          reservations[0].map((item) => (
-            <div key={item.id}>
-              <p>reservation</p>
-              <Link to={`${item.id}`} onClick={() => dispatch(singleReservation(1, item.id))}>
-                <button type="button">view reservation</button>
-              </Link>
-            </div>
-          ))
+          reservations[0].map((item) => {
+            const { name, email } = item.doctor;
+            const { reservation_time, id } = item.reservation;
+            // const username = item.user.name;
+            const userid = item.user.id;
+            return (
+              <div key={id}>
+                <p>
+                  reservation time:
+                  {' '}
+                  {reservation_time}
+                </p>
+                <p>
+                  doctor name:
+                  {' '}
+                  {name}
+                </p>
+                <p>
+                  doctor email:
+                  {' '}
+                  {email}
+                </p>
+                <Link to={`${item.id}`} onClick={() => dispatch(singleReservation(userid, id))}>
+                  <button type="button">view reservation</button>
+                </Link>
+              </div>
+            );
+          })
         }
       </div>
     </section>
