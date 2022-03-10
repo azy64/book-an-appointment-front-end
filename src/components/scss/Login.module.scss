@@ -63,18 +63,16 @@
       }
   
       input {
-        width: 80%;
+        width: 85%;
         padding: 0.5rem 1rem;
+        margin-left: 2rem;
         background-color: inherit;
         color: $secondary-color;
   
         &:hover {
-          cursor: pointer;
-          transform: scale(1.1);
           background-color: inherit;
           background-color: $secondary-color;
           color: $text-color;
-          transition: all 1.3s ease-in-out;
         }
       }
   
@@ -87,12 +85,6 @@
     button {
       @extend %btn-properties;
       @extend %btn-color;
-  
-      transition: all 0.5s ease;
-  
-      &:hover {
-        transform: scale(1.1);
-      }
     }
   }
   

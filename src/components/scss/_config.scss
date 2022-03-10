@@ -7,6 +7,7 @@ $font-stack: 'Montserrat', sans-serif;
 $font: 'Caveat', cursive,  serif;
 $border-size: 4px solid $primary-color;
 $border: 3px solid $text-color;
+$box-shadow : 10px 8px 16px rgba(79, 156, 192, 0.384);
 
 
 @mixin d-flex($position) {
@@ -36,8 +37,8 @@ $border: 3px solid $text-color;
   margin: 2rem auto;
   font-size: 1.2rem;
   font-weight: bold;
-  padding: 10px 52px;
-  border-radius: 32px;
+  padding: 10px 42px;
+  border-radius: 30px;
 }
 
 %btn-color {
@@ -49,6 +50,7 @@ input,
 button {
   border: none;
   outline: none;
+  transition: all 0.5s ease;
 
   &:hover {
     cursor: pointer;
@@ -64,4 +66,13 @@ a {
 ul {
   list-style: none;
   text-decoration: none;
+}
+
+h6 {
+  width: 100%;
+  height: 100%;
+  @include d-flex(center);
+  color: $secondary-color;
+  font-size: 2rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, serif;
 }

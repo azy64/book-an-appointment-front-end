@@ -34,7 +34,7 @@ const DoctorList = () => {
   const { doctors } = doctordatas;
   if (!doctors) {
     return (
-      <h2>Loading</h2>
+      <h6 className={styles.loading}>Loading ...</h6>
     );
   }
   return (

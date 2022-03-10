@@ -1,60 +1,23 @@
-/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable no-unused-vars */
 import React from 'react';
-// import { doctordatadetail } from '../../mockdata';
+
 // // import { IoLogoTwitter } from 'react-icons/io';
 // // import { FaLinkedinIn
-import { useSelector } from 'react-redux';
+
+import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { singleDoctor } from '../../redux/actions/DoctorActions';
 import styles from '../scss/Home.module.scss';
 import icon from '../../images/icon.png';
 
-// const DoctorDetail = () => (
-//   <section className={styles['doctor-details-section']}>
-//     <h2>Doctor me</h2>
-//     <div className={styles['detail-container']}>
-//       <div className={styles.image}>
-//         <img src={doctordatadetail.image} />
-//       </div>
-//       <div className={styles.details}>
-//         <h5 className={styles.name}>
-//           {doctordatadetail.firstName}
-//           {' '}
-//           {doctordatadetail.lastName}
-//         </h5>
-//         <div className={styles.ulIcon}>
-//           <ul>
-//             <li className={styles.first}>
-//               <p>Finance fee</p>
-//               <p>$129</p>
-//             </li>
-//             <li className={styles.first}>
-//               <p>Option to purchase fee</p>
-//               <p>$249</p>
-//             </li>
-//             <li className={styles.first}>
-//               <p>Total ammount payable</p>
-//               <p>$9,879</p>
-//             </li>
-//             <li className={styles.first}>
-//               <p>Duration</p>
-//               <p>48 Months</p>
-//             </li>
-//           </ul>
-//           <div className={styles.iconColor}>
-//             <img src={icon} alt="icon" />
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   </section>
-// );
-
 const DoctorDetail = () => {
+  const dispatch = useDispatch();
   const doctordatas = useSelector((state) => state.doctorReducer);
   const { payload } = doctordatas;
-  console.log(payload, doctordatas, 'doctor tinz');
+  console.log(payload, 'doctor tinz');
   if (!payload) {
     return (
-      <h2>Loading</h2>
+      <h6 className={styles.loading}>Loading ...</h6>
     );
   }
   return (
@@ -62,7 +25,7 @@ const DoctorDetail = () => {
       <h2>Doctor me</h2>
       <div className={styles['detail-container']}>
         <div className={styles.image}>
-          <img src={payload.doctor.picture} style={{ width: '70', height: '70' }} />
+          <img src={payload.doctor.picture} alt={payload.doctor.name} />
         </div>
         <div className={styles.details}>
           <h5 className={styles.name}>{payload.doctor.name}</h5>
@@ -88,6 +51,9 @@ const DoctorDetail = () => {
           </div>
         </div>
       </div>
+      <Link to="/user/appointments">
+        <button type="button" onClick={() => dispatch(singleDoctor(payload.doctor.id))}>Book Appointment</button>
+      </Link>
     </section>
   );
 };

@@ -45,6 +45,14 @@ header {
       height: auto;
       background-color: $secondary-color;
       border-radius: 50%;
+      transition: all 0.8s ease;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        color: $secondary-color;
+        box-shadow: $box-shadow;
+      }
     }
   }
 
@@ -86,6 +94,13 @@ header {
       .social-link {
         margin: 0 5px;
         font-size: 0.8rem;
+        transition: all 0.5s ease;
+
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.3);
+          color: $secondary-color;
+        }
       }
     }
 
