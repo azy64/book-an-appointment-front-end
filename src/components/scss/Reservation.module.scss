@@ -1,0 +1,49 @@
+@import 'config';
+
+.reservations-section {
+  @extend %main-properties;
+  text-align: center;
+
+  h2 {
+    margin: 1rem auto 2rem;
+  }
+
+  .reservation-lists{
+    @include d-flex(space-around);
+    width: 100%;
+    flex-wrap: wrap;
+    background-color: $background-color;
+  }
+
+  .reservation {
+    width: 80%;
+    max-width: 280px;
+    margin: 0 auto;
+    background-color: rgba(240, 255, 255, 0.479);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0.5rem;
+    border-radius: 8px;
+  
+  
+    .sub-title {
+      color: $primary-color;
+    }
+  
+    input {
+      width: 80%;
+      max-width: 400px;
+    }
+  
+    button {
+      @extend %btn-color;
+      @extend %btn-properties;
+      font-size: 0.8rem;
+      padding: 5px 12px
+    }
+  }
+}
+
+
+
+@import 'desktop';

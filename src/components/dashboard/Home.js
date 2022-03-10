@@ -1,10 +1,66 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { singleDoctor } from '../../redux/actions/DoctorActions';
 import styles from '../scss/Home.module.scss';
 
-const Home = () => (
-  <section className={styles['dashboard-home']}>
-    <h2>hello dashboard home</h2>
-  </section>
-);
+const Home = () => {
+  const dispatch = useDispatch();
+  const doctordatas = useSelector((state) => state.doctorReducer);
+  const { doctors } = doctordatas;
+  if (!doctors) {
+    return (
+      <h2>Loading</h2>
+    );
+  }
+  return (
+    <section className={styles['doctors-section']}>
+      <h2 className={styles.title}>Hello Welcome to your Dashboard</h2>
+      <h3 className={styles['sous-title']}>List of your favourite Doctors</h3>
+      <dv className={styles.points}>.........................</dv>
+      <ul className={styles['doctor-lists']}>
+        {
+        doctors.slice(0, 5).map((item) => {
+          const {
+            name, picture, email, id,
+          } = item.doctor;
+          return (
+            <li className={styles.list} key={id}>
+              <div className={styles['doctor-img']}>
+                <img src={picture} alt={item.name} />
+              </div>
+              <h5 className={styles.name}>{name}</h5>
+              <p className={styles.email}>{email}</p>
+              <div className={styles.points}>.........................</div>
+              <Link to={`/user/doctors/${id}`} onClick={() => dispatch(singleDoctor(id))}>
+                <button type="button">View Doctor</button>
+              </Link>
+            </li>
+          );
+        })
+      }
+      </ul>
+    </section>
+  );
+};
 
 export default Home;
+
+// const DoctorList = () => (
+//   <section className={styles['doctors-section']}>
+
+//           <li className={styles.list} key={item.id}>
+//             <button type="button">
+//               Appointment
+//             </button>
+//             {/* <ul className={styles['icon-links']}>
+//               <li className={styles.link}><FaFacebookF /></li>
+//               <li className={styles.link}><IoLogoTwitter /></li>
+//               <li className={styles.link}><FaLinkedinIn /></li>
+//             </ul> */}
+//           </li>
+//         ))
+//       }
+//     </ul>
+//   </section>
+// );

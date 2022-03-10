@@ -41,18 +41,10 @@
     transform: translateX(0%);
   }
 
-  // HOME PAGE
-
-  .dashboard-home {
-    width: 100%;
-    margin-left: 180px;
-  }
-
-  // DOCTOR LIST PAGE
+  // HOME DOCTOR LIST PAGE
 
   .doctors-section {
     margin-left: 180px;
-    padding-top: 2rem;
 
     .doctor-lists {
       @include d-flex(space-around);
@@ -69,12 +61,25 @@
     }
   }
 
-  // DOCTOR DETAIL PAGE
+  // HOME DOCTOR DETAIL PAGE
 
   .doctor-details-section {
     margin-left: $left-margin;
   }
-  
+
+  // DOCTOR PAGE
+
+  .doctor-list-section {
+    margin-left: $left-margin;
+  }
+
+  .book-appointment-section { 
+    margin-left: $left-margin;
+  }
+
+  .reservations-section {
+    margin-left: $left-margin;
+  }
 }
  
 @media screen and (min-width: 768px) {

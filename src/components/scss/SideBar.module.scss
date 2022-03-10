@@ -49,8 +49,6 @@ header {
   }
 
   .list-links {
-    // @include d-flex(flex-start);
-
     // background-color: blue;
     flex-wrap: nowrap;
     flex-direction: column;
@@ -61,7 +59,7 @@ header {
   .nav-link {
     // background-color: red;
     // display: inline-block;
-    margin: 20px 0;
+    margin: 30px 0;
     flex: 1;
 
     a {
