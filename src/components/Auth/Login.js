@@ -16,19 +16,16 @@ const Login = () => {
   const { loggedIn } = state;
   const [signedInSuccess, setSignedInSuccess] = useState(loggedIn);
   const [email, setEmail] = useState('');
-  const [name, setName] = useState('');
   const [password, setPassowrd] = useState('');
   const loginUser = (e) => {
     e.preventDefault();
     if (email === '' || password === '') return;
     const newUser = {
       email,
-      name,
       password,
     };
     dispatch(hitAPIWithSigninDetails(newUser));
     setEmail('');
-    setName('');
     setPassowrd('');
   };
 
@@ -56,18 +53,6 @@ const Login = () => {
             placeholder="Useremail"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
-          />
-        </div>
-
-        <div className={styles['form-group']}>
-          <span className={styles.icon}><FaRegUser /></span>
-          <input
-            type="text"
-            className="form-control"
-            id="name"
-            placeholder="Username"
-            onChange={(e) => setName(e.target.value)}
-            value={name}
           />
         </div>
 
