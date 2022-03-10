@@ -22,3 +22,61 @@
     }
   }
 }
+
+@media screen and (min-width: 600px) {
+
+  $left-margin: 180px;
+
+  // NAVIGATION BAR
+
+  header {
+    button {
+      display: none;
+    }
+  }
+  .sidebar-dashboard,
+  .shrink-navbar {
+    position: fixed;
+    transform: translateX(0%);
+  }
+
+  // HOME DOCTOR LIST PAGE
+
+  .doctors-section {
+    margin-left: 180px;
+
+    .doctor-lists {
+      @include d-flex(space-around);
+      // flex-wrap: wrap;
+      margin-top: 2rem;
+      // height: 100vh;
+    }
+  
+    .doctor-lists {
+      @include d-flex(space-around);
+      height: 60vh;
+      
+      
+    }
+  }
+
+  // HOME DOCTOR DETAIL PAGE
+
+  .doctor-details-section {
+    margin-left: $left-margin;
+  }
+
+  // DOCTOR PAGE
+
+  .doctor-list-section {
+    margin-left: $left-margin;
+  }
+
+  .book-appointment-section { 
+    margin-left: $left-margin;
+  }
+
+  .reservations-section {
+    margin-left: $left-margin;
+  }
+}
