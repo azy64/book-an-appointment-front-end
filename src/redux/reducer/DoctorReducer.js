@@ -22,13 +22,4 @@ const doctorReducer = (state = initiaState, { type, payload }) => {
   return state;
 };
 
-export const docIdReducer = (state = {}, { type, payload }) => {
-  if (type === Booking.GET_DOC_ID) {
-    return {
-      payload,
-    };
-  }
-  return state;
-};
-
 export default doctorReducer;

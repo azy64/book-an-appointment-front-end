@@ -1,7 +1,8 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { docId } from '../../redux/actions/DoctorActions';
+import { singleDoctor } from '../../redux/actions/DoctorActions';
 
 const DoctorDetail = () => {
   const dispatch = useDispatch();
@@ -37,7 +38,7 @@ const DoctorDetail = () => {
         </h4>
       </div>
       <Link to="/user/appointments">
-        <button type="button" onClick={() => dispatch(docId(payload.doctor.id))}>Book Appointment</button>
+        <button type="button" onClick={() => dispatch(singleDoctor(payload.doctor.id))}>Book Appointment</button>
       </Link>
     </section>
   );
