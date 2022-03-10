@@ -4,9 +4,9 @@ import { useSelector } from 'react-redux';
 
 const DoctorDetail = () => {
   const doctordatas = useSelector((state) => state.doctorReducer);
-  const { doctor } = doctordatas;
-  console.log(doctor, doctordatas, 'doctor tinz');
-  if (!doctor) {
+  const { payload } = doctordatas;
+  console.log(payload, doctordatas, 'doctor tinz');
+  if (!payload) {
     return (
       <h2>Loading</h2>
     );
@@ -15,9 +15,24 @@ const DoctorDetail = () => {
     <section className="doctor-detail">
       <h2>Doctor me</h2>
       <div>
-        <img src={doctor.picture} style={{ width: '70', height: '70' }} />
-        <h3>{doctor.name}</h3>
-        <h3>{doctor.email}</h3>
+        <img src={payload.doctor.picture} style={{ width: '70', height: '70' }} />
+        <h4>{payload.doctor.name}</h4>
+        <h4>{payload.doctor.email}</h4>
+        <h3>
+          city:
+          {' '}
+          {payload.address.city}
+        </h3>
+        <h3>
+          state:
+          {' '}
+          {payload.address.state}
+        </h3>
+        <h4>
+          address:
+          {' '}
+          {payload.address.country}
+        </h4>
       </div>
     </section>
   );

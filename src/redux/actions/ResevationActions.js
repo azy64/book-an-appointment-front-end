@@ -11,8 +11,9 @@ export const fetchAllReservations = (userid) => (async (dispatch) => {
 });
 
 export const createNewReservations = (userid, data) => (async (dispatch) => {
+  console.log(userid, data, 'payload');
   const reservation = await createReservation(userid, data);
-  console.log(reservation, 'payload');
+  console.log(reservation, 'payloadss');
   dispatch({
     type: Booking.CREATE_RESERVATION,
     payload: reservation,

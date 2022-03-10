@@ -38,19 +38,23 @@ export const ONEReservation = async (userid, id) => {
   }
 };
 
-export const createReservation = async (userid, reservation) => {
-  const { date } = reservation;
+export const createReservation = async (userid, datareserve) => {
+  const { date } = datareserve;
+  const UserId = `${userid}`;
+  const reservation = {
+    reservation_time: date,
+    date,
+    user: UserId,
+    doctor: '1',
+  };
+  console.log(reservation, 'reservation');
   const resp = await fetch(`${baseUrl}/users/${userid}/reservations`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      reservation_time: date,
-      date: 12,
-      user: userid,
-      doctor: 1,
-
+      reservation,
     }),
   });
   const data = await resp.text();
