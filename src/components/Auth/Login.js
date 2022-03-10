@@ -1,32 +1,42 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+/* eslint-disable no-unused-vars */
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { FaRegUser, FaUser } from 'react-icons/fa';
 import { HiOutlineMailOpen } from 'react-icons/hi';
 import { RiLockPasswordLine } from 'react-icons/ri';
-import { loginNewUser } from '../../redux/actions/UserActions';
+import { hitAPIWithSigninDetails } from '../../redux/reducer/user';
 
 import styles from '../scss/Login.module.scss';
 
 const Login = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
+  const state = useSelector((state) => state.UserReducer);
+  const { loggedIn } = state;
+  const [signedInSuccess, setSignedInSuccess] = useState(loggedIn);
   const [email, setEmail] = useState('');
-  const [name, setName] = useState('');
   const [password, setPassowrd] = useState('');
   const loginUser = (e) => {
     e.preventDefault();
-    if (email === '' || name === '' || password === '') return;
+    if (email === '' || password === '') return;
     const newUser = {
       email,
-      name,
       password,
     };
-    dispatch(loginNewUser(newUser));
+    dispatch(hitAPIWithSigninDetails(newUser));
     setEmail('');
-    setName('');
     setPassowrd('');
   };
+
+  useEffect(() => {
+    if (loggedIn === 'in') {
+      navigate('/user/dashboard', { replace: true });
+    }
+    if (loggedIn === 'err') {
+      setSignedInSuccess(loggedIn);
+    }
+  }, [state]);
   return (
     <section className={styles['login-section']}>
       <div className={styles.loginIcon}><FaUser /></div>
@@ -43,18 +53,6 @@ const Login = () => {
             placeholder="Useremail"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
-          />
-        </div>
-
-        <div className={styles['form-group']}>
-          <span className={styles.icon}><FaRegUser /></span>
-          <input
-            type="text"
-            className="form-control"
-            id="name"
-            placeholder="Username"
-            onChange={(e) => setName(e.target.value)}
-            value={name}
           />
         </div>
 
