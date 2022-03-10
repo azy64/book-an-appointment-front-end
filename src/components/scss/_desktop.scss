@@ -158,3 +158,26 @@
   }
 
 }
+
+@media screen and (min-width: 992px) {
+  // DOCTOR DETAIL PAGE
+
+ .detail-container {
+   padding-top: 1rem;
+
+   .ulIcon {  
+     .first {
+       font-size: 1rem;
+     }
+
+     .iconColor {
+       margin-top: 2rem;
+       width: 100%;
+
+       img {
+         width: 120px;
+       }
+     }
+   }
+ }
+}
