@@ -40,7 +40,7 @@ export const ONEReservation = async (userid, id) => {
 
 export const createReservation = async (userid, reservation) => {
   const { date } = reservation;
-  const resp = await fetch(`${baseUrl}/users/${userid}/reservations/new`, {
+  const resp = await fetch(`${baseUrl}/users/${userid}/reservations`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -48,6 +48,8 @@ export const createReservation = async (userid, reservation) => {
     body: JSON.stringify({
       reservation_time: date,
       date: 12,
+      user: userid,
+      doctor: 1,
 
     }),
   });
@@ -58,16 +60,18 @@ export const createReservation = async (userid, reservation) => {
 export const registerUser = async (user) => {
   console.log(user, 'user api');
   const { email, name, password } = user;
-  const resp = await fetch(`${baseUrl}/users/sign_up`, {
+  const resp = await fetch(`${baseUrl}/users`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      email,
-      name,
-      encrypted_password: password,
-      phone_number: '1234',
+      user: {
+        email,
+        name,
+        password,
+        phone_number: '1234123456',
+      },
     }),
   });
   const data = await resp.text();
@@ -76,18 +80,8 @@ export const registerUser = async (user) => {
 };
 
 export const loginUser = async (user) => {
-  const { email, name, password } = user;
-  const resp = await fetch(`${baseUrl}/users/sign_in`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      email,
-      name,
-      password,
-    }),
-  });
+  const { email, password } = user;
+  const resp = await fetch(`${baseUrl}/users/sign_in?email=${email}&password=${password}`);
   const data = await resp.text();
   console.log(data, 'response');
   return data;
