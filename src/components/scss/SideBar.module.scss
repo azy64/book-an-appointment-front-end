@@ -1,6 +1,5 @@
 @import 'config';
 
-
 header {
   height: 100%;
   position: fixed;
@@ -80,15 +79,14 @@ header {
   }
 
   .footer {
-
     margin-top: auto;
     margin-bottom: 1rem;
-  
+
     .social-icons {
       font-size: 1rem;
-  
+
       @include d-flex(center);
-  
+
       // display: inline;
 
       .social-link {
@@ -110,7 +108,6 @@ header {
     }
   }
 }
-
 
 .shrink-navbar {
   // background-color: red;

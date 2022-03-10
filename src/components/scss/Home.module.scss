@@ -2,7 +2,9 @@
 
 .doctors-section {
   @extend %main-properties;
+
   @include d-flex(flex-start);
+
   flex-direction: column;
   text-align: center;
 
@@ -29,7 +31,7 @@
   margin-top: 1rem;
   padding-bottom: 3rem;
   // background-color: rgba(255, 0, 0, 0.658);
- 
+
   li.list {
     width: 100%;
     margin: 0.5rem 0.3rem 1.3rem;
@@ -42,14 +44,14 @@
     width: 200px;
     height: 180px;
     margin: 0 auto;
-  
+
     img {
       width: 100%;
       height: 100%;
       border-radius: 50%;
       transition: all 0.4s ease-in-out;
 
-      &:hover{
+      &:hover {
         opacity: 0.8;
         transform: scale(1.1);
         box-shadow: $box-shadow;
@@ -72,6 +74,7 @@
     padding: 8px 16px;
     margin: 1rem;
     font-size: 1rem;
+
     @extend %btn-properties;
     @extend %btn-color;
     // color: $text-color;
@@ -79,14 +82,15 @@
 
   .icon-links {
     @include d-flex(center);
+
     margin: 0.5rem auto 0;
     width: 150px;
   }
-  
+
   .link {
-    margin: 0px 10px;
+    margin: 0 10px;
     // border-color: aquamarine;
-    
+
     svg {
       border: 2px solid $sous-title;
       border-radius: 15px;
@@ -101,6 +105,7 @@
 
 .doctor-details-section {
   @extend %main-properties;
+
   height: 100%;
   // background-color: $text-color;
 
@@ -116,7 +121,6 @@
     margin-top: 0;
     font-size: 1rem;
   }
-
 }
 
 .detail-container {
@@ -131,14 +135,14 @@
     height: auto;
     margin: 0 auto;
     text-align: center;
-    
+
     img {
       max-width: 350px;
       width: 90%;
       border-radius: 16px;
       transition: all 0.4s ease-in-out;
 
-      &:hover{
+      &:hover {
         opacity: 0.8;
         transform: scale(1.1);
         box-shadow: $box-shadow;
@@ -171,9 +175,10 @@
 
     .first {
       @include d-flex(space-between);
+
       padding: 10px 3px;
       margin: 5px 0;
-      
+
       &:nth-child(odd) {
         background-color: $sous-title;
       }
@@ -192,7 +197,6 @@
   }
 }
 
-
 .doctor-list-section {
   @extend .doctors-section;
 }
@@ -202,6 +206,7 @@
 
   .doctors-imgs {
     @include d-flex(center);
+
     width: 250px;
     height: 230px;
     margin: 0 auto;
@@ -214,11 +219,11 @@
       border-radius: 8px;
       transition: all 0.4s ease-in-out;
 
-      &:hover{
+      &:hover {
         width: 100%;
         height: 100%;
         opacity: 0.8;
-        box-shadow: $box-shadow ;
+        box-shadow: $box-shadow;
       }
     }
   }

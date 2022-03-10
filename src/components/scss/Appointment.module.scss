@@ -1,0 +1,66 @@
+@import 'config';
+
+.book-appointment-section {
+  @extend %main-properties;
+  text-align: center;
+
+  h2 {
+    margin: 1rem auto 2rem;
+  }
+
+  ul {
+    @include d-flex(center);
+    flex-wrap: wrap;
+
+    .second {
+      margin: 5px;
+      padding: 4px 8px;
+      background-color: rgba(240, 255, 255, 0.479);
+
+      & p:nth-child(1) {
+        font-size: 1rem;
+        font-weight: bold;
+      }
+
+      & p:nth-child(2) {
+        margin: 3px;
+      }
+    }
+  }
+
+  h4 {
+    color: $sous-title;
+    margin-bottom: 1rem;
+  }
+
+}
+
+form {
+  .form-group {
+    width: 80%;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: $secondary-color;
+    padding: 4rem 3rem;
+    border-radius: 8px;
+
+
+    .sub-title {
+      color: $text-color;
+      padding-bottom: 1rem;
+    }
+
+    input {
+      width: 80%;
+      max-width: 400px;
+      margin: 0.5rem auto;
+    }
+  }
+
+  .btn-appointment button {
+    @extend %btn-color;
+    @extend %btn-properties;
+  }
+}
+
+@import 'desktop';

@@ -39,7 +39,7 @@
   a button {
     @extend %btn-properties;
     @extend %btn-color;
-  
+
     &:hover {
       transform: scale(1.1);
     }
