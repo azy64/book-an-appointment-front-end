@@ -40,7 +40,7 @@ const DoctorList = () => {
   return (
     <section className={styles['doctor-list-section']}>
       <h2>List of Doctors</h2>
-      <dv className={styles.points}>.........................</dv>
+      <div className={styles.points}>.........................</div>
       <ul className={styles['all-doctor-lists']}>
         {
         doctors.map((item) => {
