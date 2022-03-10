@@ -24,7 +24,7 @@ const Home = () => {
             <img src={item.image} style={{ width: '70', height: '70' }} alt={item.name} />
             <h3>{item.firstName}</h3>
             <h4>{item.lastName}</h4>
-            <Link to={`${item.id}`} onClick={() => dispatch(singleDoctor(item.id))}>
+            <Link to={`/user/doctors/${item.id}`} onClick={() => dispatch(singleDoctor(item.id))}>
               <button type="button">Book Now</button>
             </Link>
           </div>
