@@ -1,11 +1,20 @@
 import { Booking } from '../constants/Constants';
-import { fetchReservations, ONEReservation } from '../Services';
+import { fetchReservations, ONEReservation, createReservation } from '../Services';
 
 export const fetchAllReservations = (userid) => (async (dispatch) => {
   const reservation = await fetchReservations(userid);
   console.log(reservation, 'payload');
   dispatch({
     type: Booking.ALL_RESERVATIONS,
+    payload: reservation,
+  });
+});
+
+export const createNewReservations = (userid, data) => (async (dispatch) => {
+  const reservation = await createReservation(userid, data);
+  console.log(reservation, 'payload');
+  dispatch({
+    type: Booking.CREATE_RESERVATION,
     payload: reservation,
   });
 });

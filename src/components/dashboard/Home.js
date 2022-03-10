@@ -8,8 +8,7 @@ const Home = () => {
   const dispatch = useDispatch();
   const doctordatas = useSelector((state) => state.doctorReducer);
   const { doctors } = doctordatas;
-  const firstfive = doctors[0].slice(0, 5);
-  if (!firstfive) {
+  if (!doctors) {
     return (
       <h2>Loading</h2>
     );
@@ -20,7 +19,7 @@ const Home = () => {
       <h2>List of your favourite Doctors</h2>
       <div className="list">
         {
-        firstfive.map((item) => (
+        doctors.slice(0, 5).map((item) => (
           <div className="list-items" key={item.id}>
             <img src={item.image} style={{ width: '70', height: '70' }} alt={item.name} />
             <h3>{item.firstName}</h3>

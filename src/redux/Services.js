@@ -38,7 +38,25 @@ export const ONEReservation = async (userid, id) => {
   }
 };
 
+export const createReservation = async (userid, reservation) => {
+  const { date } = reservation;
+  const resp = await fetch(`${baseUrl}/users/${userid}/reservations/new`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      reservation_time: date,
+      date: 12,
+
+    }),
+  });
+  const data = await resp.text();
+  return data;
+};
+
 export const registerUser = async (user) => {
+  console.log(user, 'user api');
   const { email, name, password } = user;
   const resp = await fetch(`${baseUrl}/users/sign_up`, {
     method: 'POST',
@@ -48,7 +66,8 @@ export const registerUser = async (user) => {
     body: JSON.stringify({
       email,
       name,
-      password,
+      encrypted_password: password,
+      phone_number: '1234',
     }),
   });
   const data = await resp.text();

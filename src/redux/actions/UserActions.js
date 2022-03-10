@@ -3,6 +3,7 @@ import { Auth } from '../constants/Constants';
 import { registerUser, loginUser } from '../Services';
 
 export const registerNewUser = (user) => (async (dispatch) => {
+  console.log(user, 'user log');
   const reservation = await registerUser(user);
   console.log(reservation, 'payload');
   dispatch({
