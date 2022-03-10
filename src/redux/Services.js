@@ -13,7 +13,7 @@ export const fetchDoctors = async () => {
 
 export const getDetailDoctor = async (id) => {
   try {
-    const response = await axios.get(`${baseUrl}/doctors/?id=${id}`);
+    const response = await axios.get(`${baseUrl}/doctors/${id}`);
     return response.data;
   } catch (e) {
     throw e.toString();
@@ -74,7 +74,7 @@ export const registerUser = async (user) => {
       },
     }),
   });
-  const data = await resp.text();
+  const data = await resp.json();
   console.log(data, 'response');
   return data;
 };

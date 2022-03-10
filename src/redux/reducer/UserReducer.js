@@ -8,9 +8,10 @@ const initialstate = {
 
 export const UserReducer = (state = initialstate, action) => {
   if (action.type === Auth.REGISTER_SUCCESS) {
+    console.log(action.payload, 'action payload');
     return {
-      ...state,
-      user: [...action.payload, { isLogged: true }],
+      isLogged: true,
+      user: [action.payload],
     };
   }
   if (action.type === Auth.LOGIN_SUCCESS) {

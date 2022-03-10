@@ -12,6 +12,7 @@ export const fetchAllDoctors = () => (async (dispatch) => {
 
 export const singleDoctor = (id) => (async (dispatch) => {
   const data = await getDetailDoctor(id);
+  console.log(data, 'single doc');
   dispatch({
     type: Booking.ONE_DOCTOR,
     payload: data,

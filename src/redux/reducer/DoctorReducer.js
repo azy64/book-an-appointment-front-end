@@ -9,12 +9,13 @@ const doctorReducer = (state = initiaState, { type, payload }) => {
   if (type === Booking.ALL_DOCTORS) {
     return {
       ...state,
-      doctors: [payload],
+      doctors: payload,
     };
   }
   if (type === Booking.ONE_DOCTOR) {
     return {
-      ...state.doctor, payload,
+      ...state,
+      doctor: payload,
     };
   }
   return state;

@@ -21,11 +21,11 @@ const Home = () => {
         {
         doctors.slice(0, 5).map((item) => (
           <div className="list-items" key={item.id}>
-            <img src={item.image} style={{ width: '70', height: '70' }} alt={item.name} />
-            <h3>{item.firstName}</h3>
-            <h4>{item.lastName}</h4>
+            <img src={item.picture} style={{ width: '70', height: '70' }} alt={item.name} />
+            <h3>{item.name}</h3>
+            <h4>{item.email}</h4>
             <Link to={`/user/doctors/${item.id}`} onClick={() => dispatch(singleDoctor(item.id))}>
-              <button type="button">Book Now</button>
+              <button type="button">View Doctor</button>
             </Link>
           </div>
         ))
