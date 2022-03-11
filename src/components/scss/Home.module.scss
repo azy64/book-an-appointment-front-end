@@ -2,7 +2,7 @@
 
 .doctors-section {
   @extend %main-properties;
-  
+
   @include d-flex(flex-start);
 
   background-color: $text-color;
@@ -26,6 +26,7 @@
 
 .doctor-lists {
   @include d-flex(space-around);
+
   width: 100%;
   flex-wrap: wrap;
   margin-top: 1rem;
@@ -119,9 +120,41 @@
   }
 }
 
+.doctor-list-section {
+  @extend .doctors-section;
+}
+
+.all-doctor-lists {
+  @extend .doctor-lists;
+
+  .doctors-imgs {
+    @include d-flex(center);
+
+    width: 250px;
+    height: 230px;
+    margin: 0 auto;
+    background-color: $background-color;
+
+    img {
+      width: 94%;
+      height: 94%;
+      border-radius: 8px;
+      transition: all 0.4s ease-in-out;
+
+      &:hover {
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+        box-shadow: $box-shadow;
+      }
+    }
+  }
+}
+
 .detail-container {
   width: 100%;
   margin: 0 auto;
+
   .image {
     width: 100%;
     height: auto;
@@ -182,37 +215,6 @@
       img {
         width: 80px;
         height: auto;
-      }
-    }
-  }
-}
-
-.doctor-list-section {
-  @extend .doctors-section;
-}
-
-.all-doctor-lists {
-  @extend .doctor-lists;
-
-  .doctors-imgs {
-    @include d-flex(center);
-
-    width: 250px;
-    height: 230px;
-    margin: 0 auto;
-    background-color: $background-color;
-
-    img {
-      width: 94%;
-      height: 94%;
-      border-radius: 8px;
-      transition: all 0.4s ease-in-out;
-
-      &:hover {
-        width: 100%;
-        height: 100%;
-        opacity: 0.8;
-        box-shadow: $box-shadow;
       }
     }
   }

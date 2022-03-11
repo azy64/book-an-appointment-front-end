@@ -2,14 +2,16 @@
 
 .reservations-section {
   @extend %main-properties;
+
   text-align: center;
 
   h2 {
     margin: 1rem auto 2rem;
   }
 
-  .reservation-lists{
+  .reservation-lists {
     @include d-flex(space-around);
+
     width: 100%;
     flex-wrap: wrap;
     background-color: $background-color;
@@ -25,32 +27,30 @@
     padding: 1rem;
     margin: 1rem 0.5rem;
     border-radius: 8px;
-  
-  
+
     .sub-title {
       color: $primary-color;
       font-size: 1.1rem;
     }
-    
+
     p {
       margin: 5px;
       font-size: 0.9rem;
     }
-  
+
     input {
       width: 80%;
       max-width: 400px;
     }
-  
+
     button {
       @extend %btn-color;
       @extend %btn-properties;
+
       font-size: 0.8rem;
-      padding: 5px 12px
+      padding: 5px 12px;
     }
   }
 }
-
-
 
 @import 'desktop';

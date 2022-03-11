@@ -2,6 +2,7 @@
 
 .book-appointment-section {
   @extend %main-properties;
+
   text-align: center;
 
   h2 {
@@ -10,6 +11,7 @@
 
   ul {
     @include d-flex(center);
+
     flex-wrap: wrap;
 
     .second {
@@ -32,7 +34,6 @@
     color: $sous-title;
     margin-bottom: 1rem;
   }
-
 }
 
 form {
@@ -43,7 +44,6 @@ form {
     background-color: $secondary-color;
     padding: 4rem 3rem;
     border-radius: 8px;
-
 
     .sub-title {
       color: $text-color;
