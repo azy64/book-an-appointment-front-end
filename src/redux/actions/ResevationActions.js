@@ -3,7 +3,6 @@ import { fetchReservations, ONEReservation, createReservation } from '../Service
 
 export const fetchAllReservations = (userid) => (async (dispatch) => {
   const reservation = await fetchReservations(userid);
-  console.log(reservation, 'payload');
   dispatch({
     type: Booking.ALL_RESERVATIONS,
     payload: reservation,
@@ -11,9 +10,7 @@ export const fetchAllReservations = (userid) => (async (dispatch) => {
 });
 
 export const createNewReservations = (userid, data) => (async (dispatch) => {
-  console.log(userid, data, 'payload');
   const reservation = await createReservation(userid, data);
-  console.log(reservation, 'payloadss');
   dispatch({
     type: Booking.CREATE_RESERVATION,
     payload: reservation,

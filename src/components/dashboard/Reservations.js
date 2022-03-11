@@ -10,7 +10,6 @@ const Reservations = () => {
   const dispatch = useDispatch();
   const reservationdatas = useSelector((state) => state.reservationReducer);
   const { reservations } = reservationdatas;
-  console.log(reservations, 'reservation');
   useEffect(() => {
     dispatch(fetchAllReservations(1));
   }, []);
