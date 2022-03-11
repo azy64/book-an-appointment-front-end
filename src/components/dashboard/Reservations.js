@@ -9,9 +9,13 @@ import styles from '../scss/Reservation.module.scss';
 const Reservations = () => {
   const dispatch = useDispatch();
   const reservationdatas = useSelector((state) => state.reservationReducer);
+  const { userId } = JSON.parse(window.localStorage.getItem('bookDoctorUser'));
+  const userID = userId || 1;
+  console.log(userId, 'local storage');
   const { reservations } = reservationdatas;
+
   useEffect(() => {
-    dispatch(fetchAllReservations(1));
+    dispatch(fetchAllReservations(userID));
   }, []);
 
   if (!reservations[0]) {
@@ -48,7 +52,7 @@ const Reservations = () => {
                   {' '}
                   {email}
                 </p>
-                <Link to={`${item.id}`} onClick={() => dispatch(singleReservation(userid, id))}>
+                <Link to={`${item.id}`} onClick={() => dispatch(singleReservation(userID, id))}>
                   <button type="button">view reservation</button>
                 </Link>
               </div>

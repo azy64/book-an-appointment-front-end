@@ -6,6 +6,8 @@ import styles from '../scss/Appointment.module.scss';
 const BookAppointment = () => {
   const dispatch = useDispatch();
   const doctordatas = useSelector((state) => state.doctorReducer);
+  const { userId } = JSON.parse(window.localStorage.getItem('bookDoctorUser'));
+  const userID = userId || 1;
   const { payload } = doctordatas;
   const docid = payload?.doctor.id;
   const [date, setDate] = useState('');
@@ -18,7 +20,7 @@ const BookAppointment = () => {
       docid,
       time,
     };
-    dispatch(createNewReservations(1, newUser));
+    dispatch(createNewReservations(userID, newUser));
     setDate('');
     setTime('');
   };

@@ -99,10 +99,11 @@ export const hitAPIWithSigninDetails = (details) => async (dispatch) => {
         },
       },
     });
+    console.log(signUpRespons, 'signup resp');
 
     const { data, headers } = signUpRespons;
     const { user } = data;
-    const { authorization } = headers;
+    const { Authorization } = headers;
 
     const mainUser = {
       name: user.name,
@@ -112,8 +113,8 @@ export const hitAPIWithSigninDetails = (details) => async (dispatch) => {
       signedUp: true,
     };
 
-    localStorage.setItem('userAuth', JSON.stringify(authorization));
-    localStorage.setItem('leaseAHomeUser', JSON.stringify(mainUser));
+    localStorage.setItem('userAuth', JSON.stringify(Authorization));
+    localStorage.setItem('bookDoctorUser', JSON.stringify(mainUser));
 
     dispatch(login(mainUser));
   } catch (error) {
@@ -129,11 +130,11 @@ export const hitAPIWithSigninDetails = (details) => async (dispatch) => {
   }
 };
 
-export const hitAPIWithLogoutDetails = (details) => async (dispatch) => {
-  const { userAuth } = details;
+export const hitAPIWithLogoutDetails = (auth) => async (dispatch) => {
+  const { userAuth } = auth;
   try {
     await fetch(
-      `${process.env.REACT_APP_LOGOUT_ENDPOINT}`,
+      `${baseUrl}/users/sign_out`,
       {
         method: 'DELETE',
         headers: {
@@ -150,7 +151,7 @@ export const hitAPIWithLogoutDetails = (details) => async (dispatch) => {
     }));
 
     localStorage.removeItem('userAuth');
-    localStorage.removeItem('leaseAHomeUser');
+    localStorage.removeItem('bookDoctorUser');
   } catch (error) {
     dispatch(
       signUp({
