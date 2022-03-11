@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import { CgMenu, CgClose } from 'react-icons/cg';
 import { IoLogoTwitter } from 'react-icons/io';
 import { TiSocialGooglePlus } from 'react-icons/ti';
 import { FaLinkedinIn, FaFacebookF, FaPinterestP } from 'react-icons/fa';
+import { hitAPIWithLogoutDetails } from '../../redux/reducer/user';
 import logo from '../../images/logo_transparent.png';
 import styles from '../scss/SideBar.module.scss';
 
 const SideBar = () => {
+  const dispatch = useDispatch();
   const [navbarShrink, setNavbarShrink] = useState(false);
+  const authuser = window.localStorage.getItem('userAuth');
+  console.log(authuser, 'auth');
   const handleToggle = () => {
     setNavbarShrink(!navbarShrink);
   };
@@ -41,6 +46,11 @@ const SideBar = () => {
           <li className={styles['nav-link']}>
             <NavLink to="/user/appointments" className={styles.activeLink}>
               Book Appointment
+            </NavLink>
+          </li>
+          <li className={styles['nav-link']}>
+            <NavLink to="/" className={styles.activeLink} onClick={() => dispatch(hitAPIWithLogoutDetails(authuser))}>
+              Sign Out
             </NavLink>
           </li>
         </ul>
