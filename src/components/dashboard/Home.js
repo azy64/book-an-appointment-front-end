@@ -45,22 +45,3 @@ const Home = () => {
 };
 
 export default Home;
-
-// const DoctorList = () => (
-//   <section className={styles['doctors-section']}>
-
-//           <li className={styles.list} key={item.id}>
-//             <button type="button">
-//               Appointment
-//             </button>
-//             {/* <ul className={styles['icon-links']}>
-//               <li className={styles.link}><FaFacebookF /></li>
-//               <li className={styles.link}><IoLogoTwitter /></li>
-//               <li className={styles.link}><FaLinkedinIn /></li>
-//             </ul> */}
-//           </li>
-//         ))
-//       }
-//     </ul>
-//   </section>
-// );

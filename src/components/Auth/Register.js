@@ -4,9 +4,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { FaRegUser, FaUser } from 'react-icons/fa';
 import { HiOutlineMailOpen } from 'react-icons/hi';
+import { FiPhoneCall } from 'react-icons/fi';
 import { RiLockPasswordLine } from 'react-icons/ri';
 import hitAPIWithSignupDetails from '../../redux/reducer/user';
-
 import styles from '../scss/Login.module.scss';
 
 const Register = () => {
@@ -51,9 +51,8 @@ const Register = () => {
       <div className={styles.loginIcon}><FaUser /></div>
       <h2>Welcome</h2>
       <form onSubmit={registerUser}>
-        <h4>Enregister</h4>
+        <h4>Register</h4>
         <div className={styles['form-group']}>
-          {/* <label htmlFor="Email1">Email address</label> */}
           <span className={styles.icon}><HiOutlineMailOpen /></span>
           <input
             type="email"
@@ -65,7 +64,6 @@ const Register = () => {
           />
         </div>
         <div className={styles['form-group']}>
-          {/* <label htmlFor="name">Full Name</label> */}
           <span className={styles.icon}><FaRegUser /></span>
           <input
             type="text"
@@ -77,8 +75,7 @@ const Register = () => {
           />
         </div>
         <div className={styles['form-group']}>
-          {/* <label htmlFor="name">Full Name</label> */}
-          <span className={styles.icon}><FaRegUser /></span>
+          <span className={styles.icon}><FiPhoneCall /></span>
           <input
             type="tel"
             className="form-control"
@@ -89,7 +86,6 @@ const Register = () => {
           />
         </div>
         <div className={styles['form-group']}>
-          {/* <label htmlFor="password">Password</label> */}
           <span className={styles.icon}><RiLockPasswordLine /></span>
           <input
             type="password"

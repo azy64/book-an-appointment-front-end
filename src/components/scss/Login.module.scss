@@ -8,7 +8,7 @@
 
   flex-direction: column;
   background-color: $background-color;
-  
+
   .loginIcon svg {
     width: 120px;
     height: 120px;
@@ -18,42 +18,42 @@
     border-radius: 50%;
     color: $secondary-color;
   }
-  
+
   h2 {
     font-size: 1.7rem;
     font-weight: 400;
     text-align: center;
     margin: 1rem auto 0.5rem;
   }
-  
+
   form {
     width: 90%;
-  
+
     @include d-flex(center);
-  
+
     flex-direction: column;
     // background-color: aqua;
-  
+
     h4 {
       color: $text-color;
       margin: 0.1rem auto 1rem;
     }
-  
+
     .form-group {
       @include d-flex(center);
-  
+
       width: 100%;
       max-width: 480px;
       margin: 10px auto;
       padding: 0 1rem;
-  
+
       @extend %btn-properties;
-  
+
       border: $border;
       // background-color: blue;
       // height: 80px;
       position: relative;
-  
+
       .icon {
         position: absolute;
         left: 1.2rem;
@@ -61,33 +61,33 @@
         // background-color: aqua;
         color: $secondary-color;
       }
-  
+
       input {
         width: 85%;
         padding: 0.5rem 1rem;
         margin-left: 2rem;
         background-color: inherit;
         color: $secondary-color;
-  
+
         &:hover {
           background-color: inherit;
           background-color: $secondary-color;
           color: $text-color;
         }
       }
-  
+
       &:focus {
         cursor: pointer;
         background-color: inherit;
       }
     }
-  
+
     button {
       @extend %btn-properties;
       @extend %btn-color;
     }
   }
-  
+
   p {
     margin-top: auto;
     font-size: 1rem;
