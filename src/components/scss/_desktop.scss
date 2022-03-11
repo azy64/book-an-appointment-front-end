@@ -51,11 +51,6 @@
       // flex-wrap: wrap;
       margin-top: 2rem;
       // height: 100vh;
-    }
-
-    .doctor-lists {
-      @include d-flex(space-around);
-
       height: 60vh;
     }
   }
