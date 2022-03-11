@@ -66,7 +66,7 @@ const BookAppointment = () => {
             className="form-control"
             id="date"
             placeholder="time fro appointment"
-            onChange={(e) => setDate(e.target.value)}
+            onChange={(e) => setTime(e.target.value)}
             value={time}
           />
         </div>

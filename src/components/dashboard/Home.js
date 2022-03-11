@@ -17,7 +17,7 @@ const Home = () => {
     <section className={styles['doctors-section']}>
       <h2 className={styles.title}>Hello Welcome to your Dashboard</h2>
       <h3 className={styles['sous-title']}>List of your favourite Doctors</h3>
-      <dv className={styles.points}>.........................</dv>
+      <div className={styles.points}>.........................</div>
       <ul className={styles['doctor-lists']}>
         {
         doctors.slice(0, 5).map((item) => {

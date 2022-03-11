@@ -89,8 +89,16 @@ const hitAPIWithSignupDetails = (details) => async (dispatch) => {
 export const hitAPIWithSigninDetails = (details) => async (dispatch) => {
   const { email, password } = details;
   try {
-    const signUpRespons = await fetch(`${baseUrl}/users/sign_in?email=${email}&password=${password}`);
-    console.log(signUpRespons);
+    const signUpRespons = await axios({
+      method: 'post',
+      url: `${baseUrl}/users/sign_in`,
+      data: {
+        user: {
+          email,
+          password,
+        },
+      },
+    });
 
     const { data, headers } = signUpRespons;
     const { user } = data;
@@ -121,39 +129,39 @@ export const hitAPIWithSigninDetails = (details) => async (dispatch) => {
   }
 };
 
-// export const hitAPIWithLogoutDetails = (details) => async (dispatch) => {
-//   const { userAuth } = details;
-//   try {
-//     await fetch(
-//       `${process.env.REACT_APP_LOGOUT_ENDPOINT}`,
-//       {
-//         method: 'DELETE',
-//         headers: {
-//           'Content-Type': 'application/json',
-//           Authorization: `${userAuth}`,
-//         },
-//       },
-//     );
+export const hitAPIWithLogoutDetails = (details) => async (dispatch) => {
+  const { userAuth } = details;
+  try {
+    await fetch(
+      `${process.env.REACT_APP_LOGOUT_ENDPOINT}`,
+      {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `${userAuth}`,
+        },
+      },
+    );
 
-//     dispatch(signUp({
-//       ...initialState,
-//       loggedIn: 'out',
-//       signedUp: false,
-//     }));
+    dispatch(signUp({
+      ...initialState,
+      loggedIn: 'out',
+      signedUp: false,
+    }));
 
-//     localStorage.removeItem('userAuth');
-//     localStorage.removeItem('leaseAHomeUser');
-//   } catch (error) {
-//     dispatch(
-//       signUp({
-//         name: '',
-//         email: '',
-//         loggedIn: 'out',
-//         userId: '',
-//         signedUp: false,
-//       }),
-//     );
-//   }
-// };
+    localStorage.removeItem('userAuth');
+    localStorage.removeItem('leaseAHomeUser');
+  } catch (error) {
+    dispatch(
+      signUp({
+        name: '',
+        email: '',
+        loggedIn: 'out',
+        userId: '',
+        signedUp: false,
+      }),
+    );
+  }
+};
 
 export default hitAPIWithSignupDetails;
