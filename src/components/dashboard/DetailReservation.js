@@ -6,7 +6,7 @@ const DetailReservation = () => {
   const { reservation } = reservationdatas;
   if (!reservation) {
     return (
-      <h2>Loading</h2>
+      <h6>Loading ...</h6>
     );
   }
   return (
