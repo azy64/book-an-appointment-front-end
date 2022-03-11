@@ -10,32 +10,36 @@ const Home = () => {
   const { doctors } = doctordatas;
   if (!doctors) {
     return (
-      <h2>Loading</h2>
+      <h6 className={styles.loading}>Loading ...</h6>
     );
   }
   return (
-    <section className={styles['doctor-list']}>
-      <h2>Hello Welcome to your Dashboard</h2>
-      <h2>List of your favourite Doctors</h2>
-      <div className="list">
+    <section className={styles['doctors-section']}>
+      <h2 className={styles.title}>Hello Welcome to your Dashboard</h2>
+      <h3 className={styles['sous-title']}>List of your favourite Doctors</h3>
+      <dv className={styles.points}>.........................</dv>
+      <ul className={styles['doctor-lists']}>
         {
         doctors.slice(0, 5).map((item) => {
           const {
             name, picture, email, id,
           } = item.doctor;
           return (
-            <div className="list-items" key={id}>
-              <img src={picture} style={{ width: '70', height: '70' }} alt={item.name} />
-              <h3>{name}</h3>
-              <h4>{email}</h4>
+            <li className={styles.list} key={id}>
+              <div className={styles['doctor-img']}>
+                <img src={picture} alt={item.name} />
+              </div>
+              <h5 className={styles.name}>{name}</h5>
+              <p className={styles.email}>{email}</p>
+              <div className={styles.points}>.........................</div>
               <Link to={`/user/doctors/${id}`} onClick={() => dispatch(singleDoctor(id))}>
                 <button type="button">View Doctor</button>
               </Link>
-            </div>
+            </li>
           );
         })
       }
-      </div>
+      </ul>
     </section>
   );
 };

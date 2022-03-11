@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createNewReservations } from '../../redux/actions/ResevationActions';
-import styles from '../scss/Login.module.scss';
+import styles from '../scss/Appointment.module.scss';
 
 const BookAppointment = () => {
   const dispatch = useDispatch();
@@ -23,34 +23,36 @@ const BookAppointment = () => {
     setTime('');
   };
   return (
-    <section className="book-appointment">
-      <h2>hello from book appointment</h2>
+    <section className={styles['book-appointment-section']}>
+      <h2 className={styles.title}>Doctor book appointment</h2>
       { payload ? (
-        <div>
-          <h3>
-            Doctor name:
-            {payload.doctor.name}
-          </h3>
-          <h3>
-            Doctor address:
-            {payload.address.address}
-            ,
-            {payload.address.city}
-            ,
-            {payload.address.state}
-            ,
-            {payload.address.country}
-          </h3>
-          <h3>
-            Doctor email:
-            {payload.doctor.email}
-          </h3>
-        </div>
+        <ul>
+          <li className={styles.second}>
+            <p>Doctor name: </p>
+            <p>{payload.doctor.name}</p>
+          </li>
+          <li className={styles.second}>
+            <p>Doctor address: </p>
+            <p>
+              {payload.address.address}
+              ,
+              {payload.address.city}
+              ,
+              {payload.address.state}
+              ,
+              {payload.address.country}
+            </p>
+          </li>
+          <li className={styles.second}>
+            <p>Doctor email:</p>
+            <p>{payload.doctor.email}</p>
+          </li>
+        </ul>
       )
-        : <h1>Kindly Go back to doctors list to select your favourite doctor</h1>}
+        : <h4>Kindly Go back to doctors list to select your favourite doctor</h4>}
       <form onSubmit={newReservation}>
-        <h4>Book Appointment</h4>
         <div className={styles['form-group']}>
+          <h3 className={styles['sub-title']}>Choose a Specific Day</h3>
           <input
             type="date"
             className="form-control"
@@ -59,8 +61,6 @@ const BookAppointment = () => {
             onChange={(e) => setDate(e.target.value)}
             value={date}
           />
-        </div>
-        <div className={styles['form-group']}>
           <input
             type="time"
             className="form-control"
@@ -71,7 +71,10 @@ const BookAppointment = () => {
           />
         </div>
 
-        <button type="submit">Book Now</button>
+        <div className={styles['btn-appointment']}>
+          <button type="submit">Book Now</button>
+        </div>
+
       </form>
     </section>
   );

@@ -76,7 +76,6 @@ const Login = () => {
         <Link to="/register" style={{ textDecoration: 'none' }}>
           Register
         </Link>
-
       </p>
     </section>
   );

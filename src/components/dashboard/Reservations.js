@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchAllReservations, singleReservation } from '../../redux/actions/ResevationActions';
+import styles from '../scss/Reservation.module.scss';
 
 const Reservations = () => {
   const dispatch = useDispatch();
@@ -16,14 +17,14 @@ const Reservations = () => {
 
   if (!reservations[0]) {
     return (
-      <h2>Loading...</h2>
+      <h6 className={styles.loading}>Loading ...</h6>
     );
   }
 
   return (
-    <section className="reservations">
+    <section className={styles['reservations-section']}>
       <h2>My Reservations</h2>
-      <div>
+      <ul className={styles['reservation-lists']}>
         {
           reservations[0].map((item) => {
             const { name, email } = item.doctor;
@@ -31,7 +32,8 @@ const Reservations = () => {
             // const username = item.user.name;
             const userid = item.user.id;
             return (
-              <div key={id}>
+              <div className={styles.reservation} key={id}>
+                <h5 className={styles['sub-title']}>reservation</h5>
                 <p>
                   reservation time:
                   {' '}
@@ -54,7 +56,7 @@ const Reservations = () => {
             );
           })
         }
-      </div>
+      </ul>
     </section>
   );
 };
