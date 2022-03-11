@@ -14,7 +14,6 @@ const DoctorDetail = () => {
   const dispatch = useDispatch();
   const doctordatas = useSelector((state) => state.doctorReducer);
   const { payload } = doctordatas;
-  console.log(payload, 'doctor tinz');
   if (!payload) {
     return (
       <h6 className={styles.loading}>Loading ...</h6>

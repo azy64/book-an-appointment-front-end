@@ -13,7 +13,6 @@ const doctorReducer = (state = initiaState, { type, payload }) => {
     };
   }
   if (type === Booking.ONE_DOCTOR) {
-    console.log(payload, 'payloading');
     return {
       ...state.doctor,
       payload,
