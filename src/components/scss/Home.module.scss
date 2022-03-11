@@ -2,9 +2,10 @@
 
 .doctors-section {
   @extend %main-properties;
-
+  
   @include d-flex(flex-start);
 
+  background-color: $text-color;
   flex-direction: column;
   text-align: center;
 
@@ -25,17 +26,14 @@
 
 .doctor-lists {
   @include d-flex(space-around);
-  // height: 100vh;
   width: 100%;
   flex-wrap: wrap;
   margin-top: 1rem;
   padding-bottom: 3rem;
-  // background-color: rgba(255, 0, 0, 0.658);
 
   li.list {
     width: 100%;
     margin: 0.5rem 0.3rem 1.3rem;
-    // text-align: center;
     background-color: rgba(240, 255, 255, 0.479);
     border-radius: 8px;
   }
@@ -77,7 +75,6 @@
 
     @extend %btn-properties;
     @extend %btn-color;
-    // color: $text-color;
   }
 
   .icon-links {
@@ -89,7 +86,6 @@
 
   .link {
     margin: 0 10px;
-    // border-color: aquamarine;
 
     svg {
       border: 2px solid $sous-title;
@@ -107,7 +103,7 @@
   @extend %main-properties;
 
   height: 100%;
-  // background-color: $text-color;
+  background-color: $text-color;
 
   h2 {
     text-align: center;
@@ -126,10 +122,6 @@
 .detail-container {
   width: 100%;
   margin: 0 auto;
-  // @include d-flex(flex-start);
-  // flex-wrap: wrap;
-  // background-color: green;
-
   .image {
     width: 100%;
     height: auto;
@@ -153,7 +145,6 @@
   .details {
     width: 100%;
     color: $primary-color;
-    // background-color: bisque;
 
     h5.name {
       font-size: 1rem;
@@ -168,7 +159,7 @@
 
   .ulIcon {
     width: 100%;
-    // background-color: blue;
+
     ul {
       width: 100%;
     }
@@ -185,7 +176,6 @@
     }
 
     .iconColor {
-      // display: none;
       width: 100%;
       text-align: right;
 
@@ -211,7 +201,6 @@
     height: 230px;
     margin: 0 auto;
     background-color: $background-color;
-    // padding: 3%;
 
     img {
       width: 94%;
