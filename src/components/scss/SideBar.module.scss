@@ -1,0 +1,108 @@
+@import 'config';
+
+header {
+  height: 100%;
+  position: fixed;
+
+  button {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    font-size: 1.5rem;
+    z-index: 3;
+    background-color: transparent;
+  }
+}
+
+.sidebar-dashboard,
+.shrink-navbar {
+  @extend %main-properties;
+
+  @include d-flex(flex-start);
+
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 180px;
+  height: 100vh;
+  padding: 0;
+  background-color: $background-color;
+  transform: translateX(0);
+  transition: all 1s ease-in-out;
+
+  .image {
+    width: 90px;
+    height: auto;
+    display: inline-block;
+    margin: 4rem auto;
+
+    img {
+      width: 100%;
+      height: auto;
+      background-color: $secondary-color;
+      border-radius: 50%;
+      transition: all 0.8s ease;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        color: $secondary-color;
+        box-shadow: $box-shadow;
+      }
+    }
+  }
+
+  .list-links {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-items: flex-start;
+  }
+
+  .nav-link {
+    margin: 30px 0;
+    flex: 1;
+
+    a {
+      width: 100%;
+      height: 100%;
+      padding: 6px 16px;
+      font-size: 1rem;
+    }
+  }
+
+  .footer {
+    margin-top: auto;
+    margin-bottom: 1rem;
+
+    .social-icons {
+      font-size: 1rem;
+
+      @include d-flex(center);
+
+      .social-link {
+        margin: 0 5px;
+        font-size: 0.8rem;
+        transition: all 0.5s ease;
+
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.3);
+          color: $secondary-color;
+        }
+      }
+    }
+
+    p {
+      font-size: 0.6rem;
+      margin-top: 5px;
+    }
+  }
+}
+
+.shrink-navbar {
+  transform: translateX(-99%);
+}
+
+@import 'desktop';
