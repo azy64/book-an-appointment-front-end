@@ -1,14 +1,15 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import ClipLoader from 'react-spinners/ClipLoader';
+import { ScaleLoader } from 'react-spinners';
 
 const DetailReservation = () => {
   const reservationdatas = useSelector((state) => state.reservationReducer);
   const { reservation } = reservationdatas;
   if (!reservation) {
     return (
-      // <h6>Loading ...</h6>
-      <h6><ClipLoader /></h6>
+      <div className="ScaleLoader">
+        <ScaleLoader color="rgba(161, 161, 161, 0.541)" loading="true" css={{ fontSze: '3.5rem' }} size={150} />
+      </div>
     );
   }
   return (

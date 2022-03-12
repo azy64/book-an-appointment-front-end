@@ -6,7 +6,7 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import ClipLoader from 'react-spinners/ClipLoader';
+import { ScaleLoader } from 'react-spinners';
 import { singleDoctor } from '../../redux/actions/DoctorActions';
 import styles from '../scss/Home.module.scss';
 import icon from '../../images/icon.png';
@@ -17,8 +17,9 @@ const DoctorDetail = () => {
   const { payload } = doctordatas;
   if (!payload) {
     return (
-      // <h6 className={styles.loading}>Loading ...</h6>
-      <h6><ClipLoader /></h6>
+      <div className="ScaleLoader">
+        <ScaleLoader color="rgba(161, 161, 161, 0.541)" loading="true" css={{ fontSze: '3.5rem' }} size={150} />
+      </div>
     );
   }
   return (

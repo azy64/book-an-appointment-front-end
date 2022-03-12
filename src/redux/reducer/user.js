@@ -99,7 +99,6 @@ export const hitAPIWithSigninDetails = (details) => async (dispatch) => {
         },
       },
     });
-    console.log(signUpRespons, 'signup resp');
 
     const { data, headers } = signUpRespons;
     const { user } = data;

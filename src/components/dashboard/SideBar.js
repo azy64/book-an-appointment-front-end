@@ -14,7 +14,6 @@ const SideBar = () => {
   const dispatch = useDispatch();
   const [navbarShrink, setNavbarShrink] = useState(false);
   const authuser = window.localStorage.getItem('userAuth');
-  console.log(authuser, 'auth');
   const handleToggle = () => {
     setNavbarShrink(!navbarShrink);
   };

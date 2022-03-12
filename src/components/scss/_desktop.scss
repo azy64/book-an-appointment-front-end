@@ -2,7 +2,6 @@
   // DOCTOR PAGE
   .doctor-lists {
     @include d-flex(space-around);
-    // height: 60vh;
 
     li.list {
       width: 45%;
@@ -48,9 +47,8 @@
 
     .doctor-lists {
       @include d-flex(space-around);
-      // flex-wrap: wrap;
+
       margin-top: 2rem;
-      // height: 100vh;
       height: 60vh;
     }
   }
@@ -106,14 +104,12 @@
 
     align-items: flex-start;
     flex-wrap: wrap;
-    // background-color: blue;
 
     .image {
       width: 65%;
       height: auto;
       margin: 2rem 0;
       text-align: left;
-      // background-color: yellow;
 
       img {
         width: 90%;
@@ -132,7 +128,6 @@
     }
 
     .ulIcon {
-      // @include d-flex(space-between);
       text-align: right;
 
       ul {

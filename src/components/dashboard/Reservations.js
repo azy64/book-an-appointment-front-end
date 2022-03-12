@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import ClipLoader from 'react-spinners/ClipLoader';
+import { ScaleLoader } from 'react-spinners';
 import { fetchAllReservations, singleReservation } from '../../redux/actions/ResevationActions';
 import styles from '../scss/Reservation.module.scss';
 
@@ -20,8 +20,9 @@ const Reservations = () => {
 
   if (!reservations[0]) {
     return (
-      // <h6 className={styles.loading}>Loading ...</h6>
-      <h6><ClipLoader /></h6>
+      <div className="ScaleLoader">
+        <ScaleLoader color="rgba(161, 161, 161, 0.541)" loading="true" css={{ fontSze: '3.5rem' }} size={150} />
+      </div>
     );
   }
 

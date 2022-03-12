@@ -6,6 +6,7 @@
 
   @include d-flex(space-between);
 
+  height: 100vh;
   flex-direction: column;
   background-color: $background-color;
 
@@ -50,15 +51,12 @@
       @extend %btn-properties;
 
       border: $border;
-      // background-color: blue;
-      // height: 80px;
       position: relative;
 
       .icon {
         position: absolute;
         left: 1.2rem;
         display: inline;
-        // background-color: aqua;
         color: $secondary-color;
       }
 

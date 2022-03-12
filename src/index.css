@@ -2,6 +2,7 @@
   --text-color: #fafafa;
   --primary-color: #121212;
   --secondary-color: rgba(36, 171, 212, 0.897);
+  --sous-title: rgba(161, 161, 161, 0.541);
 }
 
 body {
