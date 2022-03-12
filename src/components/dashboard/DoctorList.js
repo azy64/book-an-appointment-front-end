@@ -1,33 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// import { IoLogoTwitter } from 'react-icons/io';
-// import { FaLinkedinIn, FaFacebookF } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
 import ClipLoader from 'react-spinners/ClipLoader';
 import { singleDoctor } from '../../redux/actions/DoctorActions';
 import styles from '../scss/Home.module.scss';
 
-// const DoctorList = () => (
-//   <section className={styles['doctors-section']}>
-//      <ul className={styles['doctor-lists']}>
-//       {
-//         doctordata.map((item) => (
-//           <li className={styles.list} key={item.id}>
-//             <button type="button">
-//               Appointment
-//             </button>
-//             {/* <ul className={styles['icon-links']}>
-//               <li className={styles.link}><FaFacebookF /></li>
-//               <li className={styles.link}><IoLogoTwitter /></li>
-//               <li className={styles.link}><FaLinkedinIn /></li>
-//             </ul> */}
-//           </li>
-//         ))
-//       }
-//     </ul>
-//   </section>
-// );
 const DoctorList = () => {
   const dispatch = useDispatch();
   const doctordatas = useSelector((state) => state.doctorReducer);
