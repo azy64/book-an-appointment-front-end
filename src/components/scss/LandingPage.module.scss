@@ -1,0 +1,68 @@
+@import 'config';
+
+.landingPage {
+  @extend %main-properties;
+  // background-color: red;
+}
+
+.landing {
+  @include d-flex(center);
+
+  height: 100%;
+  text-align: center;
+  flex-direction: column;
+
+  .image {
+    width: 200px;
+    height: auto;
+    display: inline-block;
+    margin: 0.3rem auto;
+
+    img {
+      width: 100%;
+      height: auto;
+      background-color: $secondary-color;
+      border-radius: 50%;
+    }
+  }
+
+  h1 {
+    font-size: 1.7rem;
+    font-weight: 500;
+  }
+
+  h3 {
+    margin: 1rem auto;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  a button {
+    @extend %btn-properties;
+    @extend %btn-color;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .sousTitle {
+    @include d-flex(center);
+
+    h4 {
+      font-size: 1.1rem;
+      margin: 3rem 0.5rem;
+    }
+
+    span {
+      width: 100px;
+      height: 2px;
+      background-color: $secondary-color;
+    }
+  }
+
+  p {
+    margin-top: auto;
+    font-size: 1rem;
+  }
+}

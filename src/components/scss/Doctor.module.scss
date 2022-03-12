@@ -1,0 +1,15 @@
+@import 'config';
+
+.doctor-list-section {
+  @extend %main-properties;
+
+  height: 100%;
+  background-color: $text-color;
+
+  h2 {
+    color: $primary-color;
+    margin-top: 1rem;
+  }
+}
+
+@import 'desktop';
