@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 // import { IoLogoTwitter } from 'react-icons/io';
 // import { FaLinkedinIn, FaFacebookF } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
+import ClipLoader from 'react-spinners/ClipLoader';
 import { singleDoctor } from '../../redux/actions/DoctorActions';
 import styles from '../scss/Home.module.scss';
-// import { doctordata } from '../../mockdata';
 
 // const DoctorList = () => (
 //   <section className={styles['doctors-section']}>
@@ -34,7 +34,8 @@ const DoctorList = () => {
   const { doctors } = doctordatas;
   if (!doctors) {
     return (
-      <h6 className={styles.loading}>Loading ...</h6>
+      // <h6 className={styles.loading}>Loading ...</h6>
+      <h6><ClipLoader /></h6>
     );
   }
   return (

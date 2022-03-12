@@ -6,6 +6,7 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import ClipLoader from 'react-spinners/ClipLoader';
 import { singleDoctor } from '../../redux/actions/DoctorActions';
 import styles from '../scss/Home.module.scss';
 import icon from '../../images/icon.png';
@@ -16,7 +17,8 @@ const DoctorDetail = () => {
   const { payload } = doctordatas;
   if (!payload) {
     return (
-      <h6 className={styles.loading}>Loading ...</h6>
+      // <h6 className={styles.loading}>Loading ...</h6>
+      <h6><ClipLoader /></h6>
     );
   }
   return (

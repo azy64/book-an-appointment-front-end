@@ -3,6 +3,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import ClipLoader from 'react-spinners/ClipLoader';
 import { fetchAllReservations, singleReservation } from '../../redux/actions/ResevationActions';
 import styles from '../scss/Reservation.module.scss';
 
@@ -11,7 +12,6 @@ const Reservations = () => {
   const reservationdatas = useSelector((state) => state.reservationReducer);
   const { userId } = JSON.parse(window.localStorage.getItem('bookDoctorUser'));
   const userID = userId || 1;
-  console.log(userId, 'local storage');
   const { reservations } = reservationdatas;
 
   useEffect(() => {
@@ -20,7 +20,8 @@ const Reservations = () => {
 
   if (!reservations[0]) {
     return (
-      <h6 className={styles.loading}>Loading ...</h6>
+      // <h6 className={styles.loading}>Loading ...</h6>
+      <h6><ClipLoader /></h6>
     );
   }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import ClipLoader from 'react-spinners/ClipLoader';
 import { singleDoctor } from '../../redux/actions/DoctorActions';
 import styles from '../scss/Home.module.scss';
 
@@ -10,7 +11,8 @@ const Home = () => {
   const { doctors } = doctordatas;
   if (!doctors) {
     return (
-      <h6 className={styles.loading}>Loading ...</h6>
+      // <h6 className={styles.loading}>Loading ...</h6>
+      <h6><ClipLoader /></h6>
     );
   }
   return (
